@@ -26,7 +26,6 @@
 #include <linux/cpumask.h>
 #include <linux/interrupt.h>
 #include <linux/sec_argos.h>
-
 #define ARGOS_NAME "argos"
 #define TYPE_SHIFT 4
 #define TYPE_MASK_BIT ((1 << TYPE_SHIFT) - 1)
@@ -541,8 +540,6 @@ static int argos_pm_qos_notify(struct notifier_block *nfb,
 	cnode = &argos_pdata->devices[type];
 
 	prev_level = cnode->prev_level;
-
-	pr_debug("%s name:%s, speed:%ldMbps\n", __func__, cnode->desc, speed);
 
 	argos_blocked = cnode->argos_block;
 
